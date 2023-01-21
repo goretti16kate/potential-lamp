@@ -41,10 +41,14 @@ bytecode = compiled_sol["contracts"]["SimpleStorage.sol"]["simpleStorage"]["evm"
 # get the abi
 abi = compiled_sol["contracts"]["SimpleStorage.sol"]["simpleStorage"]["abi"]
 
+
+# In order to deploy to the mainet or testnet of your choice, you'll need to update the HTTPProvide, chain_id,
+# private key and address
+
 # for connecting to ganache
-w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
-chain_id = 1337
-my_address = "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1"
+w3 = Web3(Web3.HTTPProvider("https://goerli.infura.io/v3/d569f665124846a79f18a078a9586f79"))
+chain_id = 5
+my_address = "0x6e7BaF181dEA284B99cC5a1A714Ca914006522eA"
 private_key = os.getenv("PRIVATE_KEY")
 print(private_key)
 
